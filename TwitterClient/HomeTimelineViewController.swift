@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeTimelineViewController: UIViewController, UITableViewDataSource {
+    
+    var tweetText = [Tweet]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,19 +24,21 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource {
                 guard let tweets = tweets else { fatalError("Tweets came back nil") }
                 for tweet in tweets{
                     print(tweet.text)
+                    tweetText.append(tweet)
                 }
             }
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tweetText.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Indexpath: \(indexPath.row)"
+        cell.textLabel?.text = tweetText[indexPath.row].text
+        cell.detailTextLabel?.text = tweetText[indexPath.row].user?.name
         return cell
     }
 }
