@@ -15,22 +15,47 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
             self.tableView.reloadData()
         }
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "My Timeline"
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     
         updateTimeline()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showDetailSegue" {
+            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                let selectedTweet = self.tweetText[selectedIndex]
+                
+                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+                
+                destinationController.tweet = selectedTweet
+            }
+            
+            
+        }
+    }
+    
     func updateTimeline(){
+        
+        self.activityIndicator.startAnimating()
+        
         API.shared.getTweets { (tweets) in
             OperationQueue.main.addOperation {
                 self.tweetText = tweets ?? []
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -42,12 +67,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = tweetText[indexPath.row].text
-        cell.detailTextLabel?.text = tweetText[indexPath.row].user?.name
+        if let cell = cell as? TweetCell {
+            cell.tweetText?.text = tweetText[indexPath.row].text
+        }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
 }
