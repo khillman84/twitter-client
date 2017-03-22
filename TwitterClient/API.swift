@@ -58,12 +58,14 @@ class API {
                 
                 switch response.statusCode {
                 case 200...299:
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]{ //refactor into do, try, catch
-                        let user = User(json: userJSON)
+                        let user = JSONParser.userFrom(data: data)
                         callback(user)
-                    }
+                case 400...499:
+                    print("Error: Response came back with client side error: \(response.statusCode)")
+                case 500...599:
+                    print("Error: Response came back with server side error: \(response.statusCode)")
                 default:
-                    print("Error: response came back with staus code: \(response.statusCode)")
+                    print("Error: response came back with status code: \(response.statusCode)")
                     callback(nil)
                 }
             })
@@ -86,14 +88,19 @@ class API {
                 guard let response = response else { callback(nil); return }
                 guard let data = data else {callback(nil); return }
                 
-                if response.statusCode >= 200 && response.statusCode < 300 {
+                switch response.statusCode {
+                case 200...299:
                     JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
                         if success {
                             callback(tweets)
                         }
-                    })
-                } else {
-                    print("Something else went terribly worng! We have a staus code outside of 200 - 200")
+                })
+                case 400...499:
+                    print("Error: Response came back with client side error: \(response.statusCode)")
+                case 500...599:
+                    print("Error: Response came back with server side error: \(response.statusCode)")
+                default:
+                    print("Error: response came back with status code: \(response.statusCode)")
                     callback(nil)
                 }
             })
