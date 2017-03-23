@@ -46,7 +46,7 @@
         <!--Home Timeline View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="HomeTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,12 +59,29 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Ibb-zI-HKe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift_logo.svg" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-Ja-Dxm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="cVq-Ja-Dxm" secondAttribute="bottom" id="0ar-ns-iEa"/>
+                                        <constraint firstAttribute="trailing" secondItem="cVq-Ja-Dxm" secondAttribute="trailing" id="4H8-9y-2Do"/>
+                                        <constraint firstItem="cVq-Ja-Dxm" firstAttribute="leading" secondItem="Ibb-zI-HKe" secondAttribute="leading" id="CcL-ji-Op6"/>
+                                        <constraint firstItem="cVq-Ja-Dxm" firstAttribute="top" secondItem="Ibb-zI-HKe" secondAttribute="top" id="tYT-LK-17Y"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="76a-Cm-MlI" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76a-Cm-MlI" id="KBW-zb-3oH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-Yr-Yfn">
@@ -83,7 +100,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tweetText" destination="nyb-Yr-Yfn" id="Dvx-ZZ-TXc"/>
-                                            <segue destination="au5-lT-CLC" kind="show" identifier="showDetailSegue" id="De8-Qw-TrI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,6 +133,7 @@
                         <outlet property="activityIndicator" destination="0SS-ha-LhZ" id="6ph-dK-Gbp"/>
                         <outlet property="tableView" destination="Uxu-WW-PBs" id="E0S-xt-NMG"/>
                         <outlet property="userButton" destination="uzR-Xn-7qr" id="gUV-PD-1YV"/>
+                        <segue destination="au5-lT-CLC" kind="show" identifier="TweetDetailViewController" id="6oo-HA-xX7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,4 +213,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Swift_logo.svg" width="666" height="600"/>
+    </resources>
 </document>
