@@ -11,10 +11,17 @@ import Foundation
 class Tweet {
     let text : String
     let id : String
+    let retweetStatus : Bool
     
     var user : User?
     
     init?(json: [String : Any]) {
+        if json["retweeted_status"] == nil {
+            self.retweetStatus = true
+        } else {
+            self.retweetStatus = false
+        }
+        
         if let text = json["text"] as? String, let id = json["id_str"] as? String {
             self.text = text
             self.id = id

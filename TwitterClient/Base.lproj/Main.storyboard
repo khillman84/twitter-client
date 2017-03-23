@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76a-Cm-MlI" id="KBW-zb-3oH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-Yr-Yfn">
@@ -89,28 +89,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omd-wt-9gl">
-                                <rect key="frame" x="16" y="72" width="343" height="125"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxf-bV-BJV" userLabel="Name Label">
+                                <rect key="frame" x="8" y="69" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxf-bV-BJV" userLabel="Name Label">
-                                <rect key="frame" x="0.0" y="646" width="375" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oP-lX-xsa">
+                                <rect key="frame" x="8" y="117" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omd-wt-9gl">
+                                <rect key="frame" x="8" y="94.5" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dxf-bV-BJV" firstAttribute="top" secondItem="omd-wt-9gl" secondAttribute="bottom" id="45N-kR-0ky"/>
-                            <constraint firstAttribute="trailing" secondItem="Dxf-bV-BJV" secondAttribute="trailing" id="Yd5-Xs-Xkb"/>
-                            <constraint firstItem="pOE-PR-CXk" firstAttribute="top" secondItem="Dxf-bV-BJV" secondAttribute="bottom" id="t01-ZJ-aJk"/>
-                            <constraint firstItem="Dxf-bV-BJV" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" id="xdp-45-Ndq"/>
+                            <constraint firstItem="omd-wt-9gl" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" constant="8" id="6zn-TZ-HSs"/>
+                            <constraint firstAttribute="trailing" secondItem="1oP-lX-xsa" secondAttribute="trailing" constant="8" id="8o9-cj-AcP"/>
+                            <constraint firstItem="omd-wt-9gl" firstAttribute="top" secondItem="Dxf-bV-BJV" secondAttribute="bottom" constant="5" id="AGz-jF-EBV"/>
+                            <constraint firstItem="1oP-lX-xsa" firstAttribute="top" secondItem="omd-wt-9gl" secondAttribute="bottom" constant="2" id="AML-BS-j5e"/>
+                            <constraint firstAttribute="trailing" secondItem="Dxf-bV-BJV" secondAttribute="trailing" constant="8" id="D8F-mL-cwY"/>
+                            <constraint firstItem="Dxf-bV-BJV" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" constant="8" id="LKz-kT-RD6"/>
+                            <constraint firstItem="Dxf-bV-BJV" firstAttribute="top" secondItem="65c-r1-2j2" secondAttribute="bottom" constant="5" id="V1U-4T-a3u"/>
+                            <constraint firstAttribute="trailing" secondItem="omd-wt-9gl" secondAttribute="trailing" constant="8" id="WKG-Vp-CbM"/>
+                            <constraint firstItem="1oP-lX-xsa" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" constant="8" id="mlp-Tz-HbD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="retweetText" destination="1oP-lX-xsa" id="jFK-hC-fmz"/>
                         <outlet property="singleTweet" destination="omd-wt-9gl" id="LJI-Ry-rlH"/>
                         <outlet property="userName" destination="Dxf-bV-BJV" id="NhW-ua-19z"/>
                     </connections>

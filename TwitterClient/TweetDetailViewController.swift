@@ -14,6 +14,7 @@ class TweetDetailViewController: UIViewController {
     
     @IBOutlet weak var singleTweet: UILabel!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var retweetText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class TweetDetailViewController: UIViewController {
         
         singleTweet.text = self.tweet.text
         userName.text = self.tweet.user?.name
+        retweetText.text = String(self.tweet.retweetStatus)
+        
     }
 
     
