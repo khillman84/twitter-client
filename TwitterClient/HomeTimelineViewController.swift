@@ -17,8 +17,8 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var userButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +43,12 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
                 
                 destinationController.tweet = selectedTweet
             }
-            
-            
+        }
+        if segue.identifier == "showUserSegue" {
+            guard segue.destination is UserViewController else { return }
         }
     }
+
     
     func updateTimeline(){
         

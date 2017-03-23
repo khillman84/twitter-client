@@ -17,9 +17,9 @@ class Tweet {
     
     init?(json: [String : Any]) {
         if json["retweeted_status"] == nil {
-            self.retweetStatus = true
-        } else {
             self.retweetStatus = false
+        } else {
+            self.retweetStatus = true
         }
         
         if let text = json["text"] as? String, let id = json["id_str"] as? String {

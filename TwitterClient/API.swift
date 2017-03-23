@@ -121,6 +121,12 @@ class API {
             self.updateTimeLine(callback: callback)
         }
     }
+    
+    func getUserInfo(callback: @escaping UserCallback) {
+        self.getOAuthUser { (user) in
+            callback(user)
+        }
+    }
 }
 
 

@@ -9,6 +9,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--User View Controller-->
+        <scene sceneID="aHk-u2-DNe">
+            <objects>
+                <viewController id="pFi-4C-EdI" customClass="UserViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H6c-qD-GIY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ayh-Uy-sZt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lAj-NG-ONT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59l-cS-aWe">
+                                <rect key="frame" x="5" y="69" width="365" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="59l-cS-aWe" secondAttribute="trailing" constant="5" id="K21-bN-CEZ"/>
+                            <constraint firstItem="59l-cS-aWe" firstAttribute="top" secondItem="H6c-qD-GIY" secondAttribute="bottom" constant="5" id="oKS-fV-gMb"/>
+                            <constraint firstItem="59l-cS-aWe" firstAttribute="leading" secondItem="lAj-NG-ONT" secondAttribute="leading" constant="5" id="tje-4E-pic"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userNameLabel" destination="59l-cS-aWe" id="Me0-c9-ezA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKX-vJ-afc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="-890"/>
+        </scene>
         <!--Home Timeline View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -67,10 +101,22 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0SS-ha-LhZ" secondAttribute="bottom" id="hsj-Bh-m5s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6Zy-hB-Kbq"/>
+                    <navigationItem key="navigationItem" id="6Zy-hB-Kbq">
+                        <barButtonItem key="rightBarButtonItem" id="uzR-Xn-7qr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFn-D9-cy7">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="User"/>
+                                <connections>
+                                    <segue destination="pFi-4C-EdI" kind="show" id="Q62-vU-89w"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="0SS-ha-LhZ" id="6ph-dK-Gbp"/>
                         <outlet property="tableView" destination="Uxu-WW-PBs" id="E0S-xt-NMG"/>
+                        <outlet property="userButton" destination="uzR-Xn-7qr" id="gUV-PD-1YV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
