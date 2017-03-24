@@ -81,7 +81,7 @@
                                         <rect key="frame" x="0.0" y="219" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76a-Cm-MlI" id="KBW-zb-3oH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-Yr-Yfn">
@@ -177,7 +177,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gic-Qv-tcD" kind="show" id="8AX-oE-gSC"/>
+                                    <segue destination="gic-Qv-tcD" kind="show" identifier="UserTimelineViewController" id="8AX-oE-gSC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,15 +218,37 @@
                     <view key="view" contentMode="scaleToFill" id="ZIN-MJ-y8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wf1-Bz-psf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetNibCell" id="TCf-Gn-Hfv" customClass="TweetNibCell" customModule="TwitterClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TCf-Gn-Hfv" id="spg-Ii-PIm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wf1-Bz-psf" secondAttribute="trailing" id="N9s-ND-AB0"/>
+                            <constraint firstItem="wf1-Bz-psf" firstAttribute="leading" secondItem="ZIN-MJ-y8x" secondAttribute="leading" id="QFF-dF-egf"/>
+                            <constraint firstItem="wf1-Bz-psf" firstAttribute="top" secondItem="ZIN-MJ-y8x" secondAttribute="top" id="sJE-0S-GXI"/>
+                            <constraint firstItem="34u-kX-eyK" firstAttribute="top" secondItem="wf1-Bz-psf" secondAttribute="bottom" id="uV0-yK-gGV"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="userTimeline" destination="ZIN-MJ-y8x" id="XJk-tf-COn"/>
+                        <outlet property="tableView" destination="wf1-Bz-psf" id="oAj-sH-aEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0p-L6-du3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="37"/>
+            <point key="canvasLocation" x="2773.5999999999999" y="36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eq6-qP-Kxl">

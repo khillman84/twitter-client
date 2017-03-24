@@ -27,6 +27,15 @@ class TweetDetailViewController: UIViewController {
         retweetText.text = String(self.tweet.retweetStatus)
         
     }
-
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == UserTimelineViewController.identifier {
+                
+                guard let destinationController = segue.destination as? UserTimelineViewController else { return }
+                
+                destinationController.screenName = tweet.user!.screenName
+        }
+    }
 }

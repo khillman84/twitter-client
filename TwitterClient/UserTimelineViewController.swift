@@ -8,25 +8,77 @@
 
 import UIKit
 
-class UserTimelineViewController: UIViewController {
+class UserTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var tweetText = [Tweet]()
+    var tweets = [Tweet]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    var screenName : String!
 
-    
-    @IBOutlet var userTimeline: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getTweetsFor()
-    }
-    
-    func getTweetsFor(){
+        self.navigationItem.title = "User Timeline"
+        self.tableView.dataSource = self
         
-        API.shared.getTweets { (tweets) in
+        let userTweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        self.tableView.register(userTweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
+        self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        print(self.screenName)
+        API.shared.getTweetsFor(screenName) { (tweets) in
             OperationQueue.main.addOperation {
-                self.tweetText = tweets ?? []
+                self.tweets = tweets ?? []
             }
         }
+
     }
+    
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+        let tweet = self.tweets[indexPath.row]
+        cell.tweet = tweet
+        
+        return cell
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
