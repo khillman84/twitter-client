@@ -23,6 +23,7 @@
 		E5D9616A1E844DE700D5DF92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D961691E844DE700D5DF92 /* UIExtensions.swift */; };
 		E5D9616D1E8467DE00D5DF92 /* TweetNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */; };
 		E5D9616E1E8467DE00D5DF92 /* TweetNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */; };
+		E5D961701E84848500D5DF92 /* UserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E5D961691E844DE700D5DF92 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetNibCell.swift; sourceTree = "<group>"; };
 		E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetNibCell.xib; sourceTree = "<group>"; };
+		E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		E515A2DF1E8089C2004326DA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */,
 				E5998E8E1E8361E100847614 /* UserViewController.swift */,
 				E501B6351E8318FA00B6E8D2 /* TweetDetailViewController.swift */,
 				E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D961701E84848500D5DF92 /* UserTimelineViewController.swift in Sources */,
 				E5D9616D1E8467DE00D5DF92 /* TweetNibCell.swift in Sources */,
 				E515A2D91E805411004326DA /* User.swift in Sources */,
 				E5998E8F1E8361E100847614 /* UserViewController.swift in Sources */,
