@@ -11,10 +11,10 @@ import UIKit
 class TweetDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets = [Tweet]()
-    
-    var tweet : Tweet!
 
-    
+
+
+
     var screenName : String!
     
     
@@ -40,7 +40,7 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
         
         if segue.identifier == UserTimelineViewController.identifier {
             guard let destinationController = segue.destination as? UserTimelineViewController else { return }
-                destinationController.screenName = tweet.user?.screenName
+                destinationController.screenName = tweets[0].user?.screenName
         }
     }
     
