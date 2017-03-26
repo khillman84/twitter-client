@@ -32,7 +32,6 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        print(self.screenName)
         API.shared.getTweetsFor(screenName) { (tweets) in
             OperationQueue.main.addOperation {
                 self.tweets = tweets ?? []
