@@ -46,7 +46,7 @@
         <!--Home Timeline View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="HomeTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,9 +59,26 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Ibb-zI-HKe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift_logo.svg" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-Ja-Dxm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="cVq-Ja-Dxm" secondAttribute="bottom" id="0ar-ns-iEa"/>
+                                        <constraint firstAttribute="trailing" secondItem="cVq-Ja-Dxm" secondAttribute="trailing" id="4H8-9y-2Do"/>
+                                        <constraint firstItem="cVq-Ja-Dxm" firstAttribute="leading" secondItem="Ibb-zI-HKe" secondAttribute="leading" id="CcL-ji-Op6"/>
+                                        <constraint firstItem="cVq-Ja-Dxm" firstAttribute="top" secondItem="Ibb-zI-HKe" secondAttribute="top" id="tYT-LK-17Y"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="76a-Cm-MlI" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76a-Cm-MlI" id="KBW-zb-3oH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -83,7 +100,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tweetText" destination="nyb-Yr-Yfn" id="Dvx-ZZ-TXc"/>
-                                            <segue destination="au5-lT-CLC" kind="show" identifier="showDetailSegue" id="De8-Qw-TrI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,6 +133,7 @@
                         <outlet property="activityIndicator" destination="0SS-ha-LhZ" id="6ph-dK-Gbp"/>
                         <outlet property="tableView" destination="Uxu-WW-PBs" id="E0S-xt-NMG"/>
                         <outlet property="userButton" destination="uzR-Xn-7qr" id="gUV-PD-1YV"/>
+                        <segue destination="au5-lT-CLC" kind="show" identifier="TweetDetailViewController" id="6oo-HA-xX7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,6 +170,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTJ-KE-PS8">
+                                <rect key="frame" x="0.0" y="169" width="375" height="34"/>
+                                <state key="normal" title="View Feed">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gic-Qv-tcD" kind="show" identifier="UserTimelineViewController" id="8AX-oE-gSC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -161,9 +188,12 @@
                             <constraint firstItem="omd-wt-9gl" firstAttribute="top" secondItem="Dxf-bV-BJV" secondAttribute="bottom" constant="5" id="AGz-jF-EBV"/>
                             <constraint firstItem="1oP-lX-xsa" firstAttribute="top" secondItem="omd-wt-9gl" secondAttribute="bottom" constant="2" id="AML-BS-j5e"/>
                             <constraint firstAttribute="trailing" secondItem="Dxf-bV-BJV" secondAttribute="trailing" constant="8" id="D8F-mL-cwY"/>
+                            <constraint firstAttribute="trailing" secondItem="aTJ-KE-PS8" secondAttribute="trailing" id="KQO-Rf-DN4"/>
                             <constraint firstItem="Dxf-bV-BJV" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" constant="8" id="LKz-kT-RD6"/>
                             <constraint firstItem="Dxf-bV-BJV" firstAttribute="top" secondItem="65c-r1-2j2" secondAttribute="bottom" constant="5" id="V1U-4T-a3u"/>
+                            <constraint firstItem="aTJ-KE-PS8" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" id="VJV-FV-pcB"/>
                             <constraint firstAttribute="trailing" secondItem="omd-wt-9gl" secondAttribute="trailing" constant="8" id="WKG-Vp-CbM"/>
+                            <constraint firstItem="aTJ-KE-PS8" firstAttribute="top" secondItem="1oP-lX-xsa" secondAttribute="bottom" constant="31" id="bzt-qo-P1Q"/>
                             <constraint firstItem="1oP-lX-xsa" firstAttribute="leading" secondItem="WT4-wb-7ip" secondAttribute="leading" constant="8" id="mlp-Tz-HbD"/>
                         </constraints>
                     </view>
@@ -176,6 +206,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-mt-6dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="36.431784107946029"/>
+        </scene>
+        <!--User Timeline View Controller-->
+        <scene sceneID="av2-nx-u4x">
+            <objects>
+                <viewController id="gic-Qv-tcD" customClass="UserTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hb3-8q-C3W"/>
+                        <viewControllerLayoutGuide type="bottom" id="34u-kX-eyK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZIN-MJ-y8x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wf1-Bz-psf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetNibCell" id="TCf-Gn-Hfv" customClass="TweetNibCell" customModule="TwitterClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TCf-Gn-Hfv" id="spg-Ii-PIm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wf1-Bz-psf" secondAttribute="trailing" id="N9s-ND-AB0"/>
+                            <constraint firstItem="wf1-Bz-psf" firstAttribute="leading" secondItem="ZIN-MJ-y8x" secondAttribute="leading" id="QFF-dF-egf"/>
+                            <constraint firstItem="wf1-Bz-psf" firstAttribute="top" secondItem="ZIN-MJ-y8x" secondAttribute="top" id="sJE-0S-GXI"/>
+                            <constraint firstItem="34u-kX-eyK" firstAttribute="top" secondItem="wf1-Bz-psf" secondAttribute="bottom" id="uV0-yK-gGV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wf1-Bz-psf" id="oAj-sH-aEA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0p-L6-du3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2773.5999999999999" y="36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eq6-qP-Kxl">
@@ -196,4 +269,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Swift_logo.svg" width="666" height="600"/>
+    </resources>
 </document>

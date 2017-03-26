@@ -25,6 +25,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         self.navigationItem.title = "My Timeline"
         self.tableView.dataSource = self
+        
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -35,7 +39,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if segue.identifier == "showDetailSegue" {
+        if segue.identifier == TweetDetailViewController.identifier {
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                 let selectedTweet = self.tweetText[selectedIndex]
                 
@@ -67,12 +71,39 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        if let cell = cell as? TweetCell {
-            cell.tweetText?.text = tweetText[indexPath.row].text
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+        let tweet = self.tweetText[indexPath.row]
+        cell.tweet = tweet
+
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

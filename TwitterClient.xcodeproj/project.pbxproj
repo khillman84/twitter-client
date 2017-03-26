@@ -20,6 +20,10 @@
 		E515A2DD1E807818004326DA /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */; };
 		E5998E8F1E8361E100847614 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5998E8E1E8361E100847614 /* UserViewController.swift */; };
 		E5BD1C651E819E9600F67E7B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD1C641E819E9600F67E7B /* API.swift */; };
+		E5D9616A1E844DE700D5DF92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D961691E844DE700D5DF92 /* UIExtensions.swift */; };
+		E5D9616D1E8467DE00D5DF92 /* TweetNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */; };
+		E5D9616E1E8467DE00D5DF92 /* TweetNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */; };
+		E5D961701E84848500D5DF92 /* UserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		E5998E8E1E8361E100847614 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		E5BD1C641E819E9600F67E7B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E5D961691E844DE700D5DF92 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetNibCell.swift; sourceTree = "<group>"; };
+		E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetNibCell.xib; sourceTree = "<group>"; };
+		E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E5BD1C641E819E9600F67E7B /* API.swift */,
+				E5D961691E844DE700D5DF92 /* UIExtensions.swift */,
 				E515A2D61E8053F0004326DA /* Tweet.swift */,
 				E515A2DA1E806D0B004326DA /* JSONParser.swift */,
 				E515A2D81E805411004326DA /* User.swift */,
@@ -96,6 +105,7 @@
 		E515A2DF1E8089C2004326DA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9616F1E84848500D5DF92 /* UserTimelineViewController.swift */,
 				E5998E8E1E8361E100847614 /* UserViewController.swift */,
 				E501B6351E8318FA00B6E8D2 /* TweetDetailViewController.swift */,
 				E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */,
@@ -106,6 +116,8 @@
 		E5BD1C661E819EA900F67E7B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */,
+				E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */,
 				E515A2C61E803F55004326DA /* Main.storyboard */,
 				E501B6331E82F9EC00B6E8D2 /* TweetCell.swift */,
 			);
@@ -172,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D9616E1E8467DE00D5DF92 /* TweetNibCell.xib in Resources */,
 				E515A2CD1E803F55004326DA /* LaunchScreen.storyboard in Resources */,
 				E515A2CA1E803F55004326DA /* Assets.xcassets in Resources */,
 				E515A2C81E803F55004326DA /* Main.storyboard in Resources */,
@@ -186,9 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D961701E84848500D5DF92 /* UserTimelineViewController.swift in Sources */,
+				E5D9616D1E8467DE00D5DF92 /* TweetNibCell.swift in Sources */,
 				E515A2D91E805411004326DA /* User.swift in Sources */,
 				E5998E8F1E8361E100847614 /* UserViewController.swift in Sources */,
 				E501B6341E82F9EC00B6E8D2 /* TweetCell.swift in Sources */,
+				E5D9616A1E844DE700D5DF92 /* UIExtensions.swift in Sources */,
 				E515A2DB1E806D0B004326DA /* JSONParser.swift in Sources */,
 				E515A2D71E8053F0004326DA /* Tweet.swift in Sources */,
 				E515A2C31E803F55004326DA /* AppDelegate.swift in Sources */,
