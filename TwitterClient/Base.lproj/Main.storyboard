@@ -21,27 +21,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59l-cS-aWe">
-                                <rect key="frame" x="5" y="69" width="365" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="578" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fj7-pE-Hew">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserNibCell" rowHeight="578" id="X8E-d8-Tbf" customClass="UserNibCell" customModule="TwitterClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8E-d8-Tbf" id="DZL-HE-Sds">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="jJM-jS-V5m">
+                                <rect key="frame" x="10" y="10" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jJM-jS-V5m" id="PJG-LJ-hkW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="59l-cS-aWe" secondAttribute="trailing" constant="5" id="K21-bN-CEZ"/>
-                            <constraint firstItem="59l-cS-aWe" firstAttribute="top" secondItem="H6c-qD-GIY" secondAttribute="bottom" constant="5" id="oKS-fV-gMb"/>
-                            <constraint firstItem="59l-cS-aWe" firstAttribute="leading" secondItem="lAj-NG-ONT" secondAttribute="leading" constant="5" id="tje-4E-pic"/>
+                            <constraint firstItem="ayh-Uy-sZt" firstAttribute="top" secondItem="fj7-pE-Hew" secondAttribute="bottom" id="5Ar-6x-Tyk"/>
+                            <constraint firstAttribute="trailing" secondItem="fj7-pE-Hew" secondAttribute="trailing" id="an3-hm-HzC"/>
+                            <constraint firstItem="fj7-pE-Hew" firstAttribute="leading" secondItem="lAj-NG-ONT" secondAttribute="leading" id="ntR-N6-WA5"/>
+                            <constraint firstItem="fj7-pE-Hew" firstAttribute="top" secondItem="lAj-NG-ONT" secondAttribute="top" id="pLO-UP-tFZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userNameLabel" destination="59l-cS-aWe" id="Me0-c9-ezA"/>
+                        <outlet property="userView" destination="fj7-pE-Hew" id="KJk-vn-kzs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKX-vJ-afc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-890"/>
+            <point key="canvasLocation" x="972" y="-890.10494752623697"/>
         </scene>
         <!--Home Timeline View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -81,7 +98,7 @@
                                         <rect key="frame" x="0.0" y="219" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76a-Cm-MlI" id="KBW-zb-3oH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-Yr-Yfn">
