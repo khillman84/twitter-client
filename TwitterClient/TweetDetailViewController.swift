@@ -12,13 +12,12 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     var tweets = [Tweet]()
 
-
-
-
     var screenName : String!
     
     
+    
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

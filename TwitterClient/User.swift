@@ -14,6 +14,7 @@ class User {
     let profileImageURL : String
     let location : String
     let screenName : String
+    let bio : String
     
     init?(json: [String : Any]) {
         print(json)
@@ -21,12 +22,14 @@ class User {
         if let name = json["name"] as? String,
             let profileImageURL = json["profile_image_url_https"] as? String,
             let location = json["location"] as? String,
-            let screenName = json["screen_name"] as? String {
+            let screenName = json["screen_name"] as? String,
+            let bio = json["description"] as? String {
             
             self.name = name
             self.profileImageURL = profileImageURL
             self.location = location
             self.screenName = screenName
+            self.bio = bio
         } else {
             return nil
         }
