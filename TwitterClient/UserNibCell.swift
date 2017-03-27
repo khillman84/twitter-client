@@ -15,6 +15,7 @@ class UserNibCell: UITableViewCell {
     @IBOutlet weak var userLocation: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var bioView: UILabel!
+    @IBOutlet weak var backImage: UIImageView!
     
     var user : User! {
         didSet {
@@ -24,6 +25,10 @@ class UserNibCell: UITableViewCell {
 
             UIImage.fetchImageWith(user.profileImageURL) { (image) in
                 self.userImage.image = image
+            }
+            
+            UIImage.fetchImageWith(user.backgroundImageURL) { (image) in
+                self.backImage.image = image
             }
             
         }

@@ -16,8 +16,16 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    var tweets = [Tweet]() {
+        didSet {
+            self.userTimeline.reloadData()
+        }
+    }
+    
+    var screenName : String!
     
     @IBOutlet weak var userView: UITableView!
+    @IBOutlet weak var userTimeline: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +55,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: UserNibCell.identifier, for: indexPath) as! UserNibCell
         
         let user = self.user[indexPath.row]
-        cell.user = user 
+        cell.user = user
         
         return cell
     }

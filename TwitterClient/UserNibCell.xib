@@ -19,47 +19,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="433" height="459"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2S0-dX-VVb">
+                        <rect key="frame" x="0.0" y="0.0" width="433" height="142"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xEO-eT-Szh">
-                        <rect key="frame" x="163" y="8" width="100" height="100"/>
+                        <rect key="frame" x="163" y="68" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="3mm-wH-aav"/>
                             <constraint firstAttribute="height" constant="100" id="Sku-Wh-xgl"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igm-9v-QwF">
-                        <rect key="frame" x="8" y="145" width="417" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="8" y="214" width="417" height="18"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2i-jo-hlq">
-                        <rect key="frame" x="8" y="116" width="417" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="8" y="176" width="417" height="30"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-JA-RFT">
-                        <rect key="frame" x="8" y="174" width="417" height="21"/>
+                        <rect key="frame" x="8" y="240" width="417" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xEO-eT-Szh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="61l-J6-Vb8"/>
+                    <constraint firstItem="2S0-dX-VVb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0F0-j9-InC"/>
+                    <constraint firstItem="xEO-eT-Szh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="60" id="61l-J6-Vb8"/>
                     <constraint firstItem="Ff9-JA-RFT" firstAttribute="top" secondItem="igm-9v-QwF" secondAttribute="bottom" constant="8" id="7JT-qo-ti1"/>
                     <constraint firstItem="Ff9-JA-RFT" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Bfx-de-kDp"/>
+                    <constraint firstItem="2S0-dX-VVb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FhF-Qw-493"/>
                     <constraint firstItem="igm-9v-QwF" firstAttribute="top" secondItem="N2i-jo-hlq" secondAttribute="bottom" constant="8" id="ORr-UX-DoU"/>
                     <constraint firstAttribute="trailing" secondItem="N2i-jo-hlq" secondAttribute="trailing" constant="8" id="PNS-ls-wRa"/>
                     <constraint firstAttribute="trailing" secondItem="igm-9v-QwF" secondAttribute="trailing" constant="8" id="Q8A-Zz-6kd"/>
                     <constraint firstItem="Ff9-JA-RFT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Utl-7s-taw"/>
                     <constraint firstItem="igm-9v-QwF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eRf-zV-VJK"/>
+                    <constraint firstItem="N2i-jo-hlq" firstAttribute="top" secondItem="2S0-dX-VVb" secondAttribute="bottom" constant="34" id="gCY-7n-gC1"/>
                     <constraint firstItem="xEO-eT-Szh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="163" id="h1j-n8-Bdx"/>
                     <constraint firstItem="N2i-jo-hlq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jQU-0B-EcL"/>
                     <constraint firstItem="N2i-jo-hlq" firstAttribute="top" secondItem="xEO-eT-Szh" secondAttribute="bottom" constant="8" id="k3e-TB-jv4"/>
+                    <constraint firstAttribute="trailing" secondItem="2S0-dX-VVb" secondAttribute="trailing" id="meE-xt-O8r"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="backImage" destination="2S0-dX-VVb" id="yWO-3Z-XPz"/>
                 <outlet property="bioView" destination="Ff9-JA-RFT" id="CBC-dw-eF5"/>
                 <outlet property="userImage" destination="xEO-eT-Szh" id="8pd-JC-Wbn"/>
                 <outlet property="userLocation" destination="igm-9v-QwF" id="mAJ-Kp-NCc"/>
