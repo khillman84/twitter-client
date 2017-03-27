@@ -18,6 +18,8 @@
 		E515A2D91E805411004326DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515A2D81E805411004326DA /* User.swift */; };
 		E515A2DB1E806D0B004326DA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515A2DA1E806D0B004326DA /* JSONParser.swift */; };
 		E515A2DD1E807818004326DA /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */; };
+		E58C90CC1E8853600075AADF /* UserNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C90CA1E8853600075AADF /* UserNibCell.swift */; };
+		E58C90CD1E8853600075AADF /* UserNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58C90CB1E8853600075AADF /* UserNibCell.xib */; };
 		E5998E8F1E8361E100847614 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5998E8E1E8361E100847614 /* UserViewController.swift */; };
 		E5BD1C651E819E9600F67E7B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD1C641E819E9600F67E7B /* API.swift */; };
 		E5D9616A1E844DE700D5DF92 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D961691E844DE700D5DF92 /* UIExtensions.swift */; };
@@ -40,6 +42,8 @@
 		E515A2D81E805411004326DA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E515A2DA1E806D0B004326DA /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		E515A2DC1E807818004326DA /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
+		E58C90CA1E8853600075AADF /* UserNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNibCell.swift; sourceTree = "<group>"; };
+		E58C90CB1E8853600075AADF /* UserNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserNibCell.xib; sourceTree = "<group>"; };
 		E5998E8E1E8361E100847614 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		E5BD1C641E819E9600F67E7B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E5D961691E844DE700D5DF92 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				E5D9616B1E8467DE00D5DF92 /* TweetNibCell.swift */,
+				E58C90CA1E8853600075AADF /* UserNibCell.swift */,
+				E58C90CB1E8853600075AADF /* UserNibCell.xib */,
 				E5D9616C1E8467DE00D5DF92 /* TweetNibCell.xib */,
 				E515A2C61E803F55004326DA /* Main.storyboard */,
 				E501B6331E82F9EC00B6E8D2 /* TweetCell.swift */,
@@ -186,6 +192,7 @@
 			files = (
 				E5D9616E1E8467DE00D5DF92 /* TweetNibCell.xib in Resources */,
 				E515A2CD1E803F55004326DA /* LaunchScreen.storyboard in Resources */,
+				E58C90CD1E8853600075AADF /* UserNibCell.xib in Resources */,
 				E515A2CA1E803F55004326DA /* Assets.xcassets in Resources */,
 				E515A2C81E803F55004326DA /* Main.storyboard in Resources */,
 				E515A2D51E8052B3004326DA /* tweet.json in Resources */,
@@ -203,6 +210,7 @@
 				E5D9616D1E8467DE00D5DF92 /* TweetNibCell.swift in Sources */,
 				E515A2D91E805411004326DA /* User.swift in Sources */,
 				E5998E8F1E8361E100847614 /* UserViewController.swift in Sources */,
+				E58C90CC1E8853600075AADF /* UserNibCell.swift in Sources */,
 				E501B6341E82F9EC00B6E8D2 /* TweetCell.swift in Sources */,
 				E5D9616A1E844DE700D5DF92 /* UIExtensions.swift in Sources */,
 				E515A2DB1E806D0B004326DA /* JSONParser.swift in Sources */,

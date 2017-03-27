@@ -45,9 +45,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
                 
                 guard let destinationController = segue.destination as? TweetDetailViewController else { return }
                 
-                destinationController.tweet = selectedTweet
+                destinationController.tweets = [selectedTweet]
             }
         }
+        
         if segue.identifier == "showUserSegue" {
             guard segue.destination is UserViewController else { return }
         }

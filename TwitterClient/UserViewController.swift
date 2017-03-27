@@ -8,24 +8,55 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var user : User!
-
-    @IBOutlet weak var userNameLabel: UILabel!
+    var user = [User]() {
+        didSet {
+            self.userView.reloadData()
+        }
+    }
+    
+    var tweets = [Tweet]() {
+        didSet {
+            self.userTimeline.reloadData()
+        }
+    }
+    
+    var screenName : String!
+    
+    @IBOutlet weak var userView: UITableView!
+    @IBOutlet weak var userTimeline: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUser()
-    }
-
-    func getUser() {
+        
+        self.navigationItem.title = "User"
+        self.userView.dataSource = self
+        
+        let userNib = UINib(nibName: "UserNibCell", bundle: nil)
+        self.userView.register(userNib, forCellReuseIdentifier: UserNibCell.identifier)
+        
+        self.userView.delegate = self
+        self.userView.estimatedRowHeight = 50
+        self.userView.rowHeight = UITableViewAutomaticDimension
         API.shared.getUserInfo { (user) in
             OperationQueue.main.addOperation {
-                self.user = user
-                self.userNameLabel.text = user?.name
+                self.user = [user!]
             }
         }
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return user.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserNibCell.identifier, for: indexPath) as! UserNibCell
+        
+        let user = self.user[indexPath.row]
+        cell.user = user
+        
+        return cell
+    }
 }

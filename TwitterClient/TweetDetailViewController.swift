@@ -8,23 +8,29 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController {
+class TweetDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var tweet : Tweet!
+    var tweets = [Tweet]()
+
+    var screenName : String!
     
-    @IBOutlet weak var singleTweet: UILabel!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var retweetText: UILabel!
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.tweet.user?.name ?? "Unkown")
-        print(self.tweet.text)
+        self.navigationItem.title = "The Tweet"
+        self.tableView.dataSource = self
         
-        singleTweet.text = self.tweet.text
-        userName.text = self.tweet.user?.name
-        retweetText.text = String(self.tweet.retweetStatus)
+        let userTweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        self.tableView.register(userTweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
+        self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
@@ -32,10 +38,22 @@ class TweetDetailViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         
         if segue.identifier == UserTimelineViewController.identifier {
-                
-                guard let destinationController = segue.destination as? UserTimelineViewController else { return }
-                
-                destinationController.screenName = tweet.user!.screenName
+            guard let destinationController = segue.destination as? UserTimelineViewController else { return }
+                destinationController.screenName = tweets[0].user?.screenName
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+        let tweet = self.tweets[indexPath.row]
+        cell.tweet = tweet
+        
+        return cell
     }
 }
